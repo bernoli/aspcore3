@@ -1,6 +1,6 @@
 using System;
 
-namespace aspcore3.Models
+namespace web.Models
 {
     public class ErrorViewModel
     {
