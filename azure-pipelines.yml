@@ -37,13 +37,13 @@ stages:
         namespace: aspcore3
         command: set
         arguments: 'image deployment/aspcore3-deployment aspcore3-container=pieterd.azurecr.io/$(Build.Repository.Name):$(Build.BuildId)'
-    - task: Kubernetes@1
-      displayName: 'kubectl apply -f **/yml/deployment.yml'
-      inputs:
-        connectionType: 'Azure Resource Manager'
-        azureSubscriptionEndpoint: 'Internal (1ba0c403-6df1-461d-a7bc-c5471edbd702)'
-        azureResourceGroup: aksrg201907
-        kubernetesCluster: aks201907
-        namespace: aspcore3
-        command: apply
-        arguments: '-f ./yml/deployment.yml'
+#    - task: Kubernetes@1
+#      displayName: 'kubectl apply -f **/yml/deployment.yml'
+#      inputs:
+#        connectionType: 'Azure Resource Manager'
+#        azureSubscriptionEndpoint: 'Internal (1ba0c403-6df1-461d-a7bc-c5471edbd702)'
+#        azureResourceGroup: aksrg201907
+#        kubernetesCluster: aks201907
+#        namespace: aspcore3
+#        command: apply
+#        arguments: '-f ./yml/deployment.yml'
