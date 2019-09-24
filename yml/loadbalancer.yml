@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: aspcorealpine-service
+  name: aspcore3-service
   labels:
-   app: aspcorealpine-service
+   app: aspcore3-service
 spec:
   selector:
-    app: aspcorealpine
+    app: aspcore3
   ports:
     - port: 80
       targetPort: 80
