@@ -27,6 +27,13 @@ stages:
         azureContainerRegistry: '{"loginServer":"pieterd.azurecr.io", "id" : "/subscriptions/1ba0c403-6df1-461d-a7bc-c5471edbd702/resourceGroups/devopsrg/providers/Microsoft.ContainerRegistry/registries/pieterd"}'
         dockerFile: '**/Dockerfile'
         includeLatestTag: true
+    - task: Docker@0
+      displayName: 'Push an image'
+      inputs:
+        azureSubscription: 'Internal (1ba0c403-6df1-461d-a7bc-c5471edbd702)'
+        azureContainerRegistry: '{"loginServer":"pieterd.azurecr.io", "id" : "/subscriptions/1ba0c403-6df1-461d-a7bc-c5471edbd702/resourceGroups/devopsrg/providers/Microsoft.ContainerRegistry/registries/pieterd"}'
+        action: 'Push an image'
+        includeLatestTag: true
 
 #    - task: Docker@2
 #      displayName: Build an image
