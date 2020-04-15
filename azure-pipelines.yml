@@ -33,7 +33,7 @@ stages:
     - task: Kubernetes@1
       displayName: 'kubectl set'
       inputs:
-        kubernetesServiceEndpoint: 201907asp3
+        kubernetesServiceEndpoint: aks2004aspcore3
         namespace: aspcore3
         command: set
         arguments: 'image deployment/aspcore3-deployment aspcore3-container=pieterd.azurecr.io/$(Build.Repository.Name):$(Build.BuildId)'
