@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: azure/docker-login@v1 
+      with:
+        login-server: pieterd.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    
+    - run: |
+        docker build . -t pieterd.azurecr.io/pdebruin/aspcore3:${{ github.sha }}
+        docker push pieterd.azurecr.io/pdebruin/aspcore3:${{ github.sha }}
